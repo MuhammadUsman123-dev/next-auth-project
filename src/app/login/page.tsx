@@ -13,7 +13,7 @@ export default function LoginPage() {
   const onLogin = async () => {};
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <h1 className="text-center  text-2xl">Login</h1>
+      <h1 className="text-center  text-2xl">Login page now puiblish</h1>
       <hr />
       
       <label htmlFor="email">email</label>
