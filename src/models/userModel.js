@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { Document, Model, Schema } from "mongoose";
 import { unique } from "next/dist/build/utils";
 import { type } from "os";
 const userSchema = new mongoose.SchemaType({
@@ -30,6 +30,6 @@ const userSchema = new mongoose.SchemaType({
   verifyTokenExpiry: Date,
 });
 
-const Useer = mangooes.models.users || mongoose.model("user", userSchema);
+const User = mangooes.models.users || mongoose.model("user", userSchema);
 
-export default UserActivation;
+export default User;

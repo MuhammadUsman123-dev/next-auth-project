@@ -1,21 +1,21 @@
 "use client";
 import Link from "next/link";
-import React from "react";
-// import { userRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import axios from "axios";
-
+import React from "react";
 export default function LoginPage() {
+  const router = useRouter();
   const [user, seetUser] = React.useState({
     email: "",
     password: "",
-   
   });
+  const onSignup = async () => {};
+
   const onLogin = async () => {};
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <h1 className="text-center  text-2xl">Login page now puiblish</h1>
       <hr />
-      
       <label htmlFor="email">email</label>
       <input
         className="p-2 border border-gray-300 rounded-lg mb-4 focus;outline-none border-gray-600"
@@ -40,7 +40,9 @@ export default function LoginPage() {
       >
         login here
       </button>
-      <Link className="capitalize" href="/signup">Visit login page</Link>
+      <Link className="capitalize" href="/signup">
+        Visit Signup page
+      </Link>
     </div>
   );
 }
