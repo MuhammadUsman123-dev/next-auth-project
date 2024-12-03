@@ -4,18 +4,18 @@ import React, { useEffect } from "react";
 
 import { useRouter } from "next/navigation";
 import axios from "axios";
-import toast from "react-hot-toast";
+import { toast } from "react-hot-toast";
 
-export default function SignupPage() {
+export default function Signup() {
   const router = useRouter();
 
-  const [user, seetUser] = React.useState({
+  const [user, setUser] = React.useState({
     email: "",
     password: "",
     username: "",
   });
   const [buttonDisabled, setButtonDisabled] = React.useState(false);
-  const [loading, setLoading] = React.useState(false);
+
   useEffect(() => {
     if (
       user.email.length > 0 &&
@@ -27,10 +27,11 @@ export default function SignupPage() {
       setButtonDisabled(true);
     }
   }, [user]);
+  const [loading, setLoading] = React.useState(false);
+
   const onSignup = async () => {
     try {
       setLoading(true);
-
       const response = await axios.post("/api/users/signup", user);
       console.log("Signup success", response.data);
       router.push("/login");
@@ -53,7 +54,7 @@ export default function SignupPage() {
         type="text"
         id="username"
         value={user.username}
-        onChange={(e) => seetUser({ ...user, username: e.target.value })}
+        onChange={(e) => setUser({ ...user, username: e.target.value })}
         placeholder="username"
       />
       <label htmlFor="email">email</label>
@@ -62,7 +63,7 @@ export default function SignupPage() {
         type="email"
         id="username"
         value={user.email}
-        onChange={(e) => seetUser({ ...user, email: e.target.value })}
+        onChange={(e) => setUser({ ...user, email: e.target.value })}
         placeholder="username"
       />
       <label htmlFor="password">password</label>
@@ -71,7 +72,7 @@ export default function SignupPage() {
         type="password"
         id="username"
         value={user.password}
-        onChange={(e) => seetUser({ ...user, password: e.target.value })}
+        onChange={(e) => setUser({ ...user, password: e.target.value })}
         placeholder="username"
       />
       <button
