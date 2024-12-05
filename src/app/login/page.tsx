@@ -37,7 +37,9 @@ export default function LoginPage() {
   }, [user]);
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <h1 className="text-center  text-2xl">{loading ? "Processing" :"Login"}</h1>
+      <h1 className="text-center  text-2xl">
+        {loading ? "Processing" : "Login"}
+      </h1>
       <hr />
       <label htmlFor="email">email</label>
       <input
@@ -48,7 +50,7 @@ export default function LoginPage() {
         onChange={(e) => setUser({ ...user, email: e.target.value })}
         placeholder="username"
       />
-      <label htmlFor="password">password</label>
+      <label htmlFor="password">Password</label>
       <input
         className="p-2 border border-gray-300 rounded-lg mb-4 focus;outline-none border-gray-600 text-black"
         type="password"
